@@ -1,6 +1,7 @@
-import Link from 'next/link'
-import classes from './page.module.css'
-import MealsGrid from "/components/meals/meals-grid"
+import Link from 'next/link';
+import classes from './page.module.css';
+import MealsGrid from "/components/meals/meals-grid";
+import LoadingPageMeals from './loadingMeals';
 import {getMeals } from "/lib/mealsapi"
 import { Suspense } from 'react';
 
@@ -23,7 +24,7 @@ export default  function MealsPage(){
             <p className={classes.cta}><Link href='/meals/share'>Share yours</Link></p>
         </header>
         <main className={classes.main}>
-            <Suspense fallback={<p className={classes.loading}>Fetching...</p>}>
+            <Suspense fallback={<LoadingPageMeals />}>
                 <Meals/>
             </Suspense>
         </main>
