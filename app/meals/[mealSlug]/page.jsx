@@ -2,7 +2,21 @@ import classes from "./page.module.css"
 import {getMeal} from '/lib/mealsapi'
 import {notFound} from "next/navigation"
 import Image from "next/image"
-
+export async function generateMetadata({params}) {
+    const meal = getMeal(params.mealSlug)
+    if(meal){
+        return {
+            title: meal.title,
+            description: meal.summary
+        }
+    }else {
+        return {
+            title: "Unknown meal page",
+            description : "The url you mentionned leads to an unknown page"
+        }
+    }
+    
+}
 export default async function MealsSlugDetail({ params }) {
     
     const {mealSlug} = await params
