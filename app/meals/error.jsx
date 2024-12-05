@@ -1,9 +1,9 @@
 "use client";
-export default function Error({error}) {
+export default function Error({ error }) {
     return (
         <main className="error">
-            <h1>Errror : </h1>
-            <p>Error while fetching meals data, please try again !</p>
+            <h1>Erreur :</h1>
+            <p>Erreur lors de la récupération des données des recettes, veuillez réessayer !</p>
         </main>
-        )
+    )
 }

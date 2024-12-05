@@ -10,28 +10,28 @@ export default function CommunityPage() {
     <>
       <header className={classes.header}>
         <h1>
-          One shared passion: <span className={classes.highlight}>Food</span>
+          Une passion commune : <span className={classes.highlight}>la cuisine</span>
         </h1>
-        <p>Join our community and share your favorite recipes!</p>
+        <p>Rejoignez notre communauté et partagez vos recettes préférées !</p>
       </header>
       <main className={classes.main}>
-        <h2>Community Perks</h2>
+        <h2>Avantages de la communauté</h2>
 
         <ul className={classes.perks}>
           <li>
-            <Image src={mealIcon} alt="A delicious meal" />
-            <p>Share & discover recipes</p>
+            <Image src={mealIcon} alt="Un délicieux repas" />
+            <p>Partagez et découvrez des recettes</p>
           </li>
           <li>
-            <Image src={communityIcon} alt="A crowd of people, cooking" />
-            <p>Find new friends & like-minded people</p>
+            <Image src={communityIcon} alt="Un groupe de personnes qui cuisinent" />
+            <p>Rencontrez de nouveaux amis et des passionnés</p>
           </li>
           <li>
             <Image
               src={eventsIcon}
-              alt="A crowd of people at a cooking event"
+              alt="Un groupe de personnes lors d'un événement culinaire"
             />
-            <p>Participate in exclusive events</p>
+            <p>Participez à des événements exclusifs</p>
           </li>
         </ul>
       </main>

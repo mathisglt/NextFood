@@ -1,37 +1,37 @@
 "use client"
 import classes from './page.module.css';
 import ImagePicker from "/components/meals/image-picker"
-import {useActionState} from 'react'
-import {shareMeal} from "/lib/addMealShare"
+import { useActionState } from 'react'
+import { shareMeal } from "/lib/addMealShare"
 import MealsFormSubmit from '/components/meals/loading-button';
 export default function ShareMealPage() {
-  const [state,formAction] = useActionState(shareMeal,{message:null})
+  const [state, formAction] = useActionState(shareMeal, { message: null })
   return (
     <>
       <header className={classes.header}>
         <h1>
-          Share your <span className={classes.highlight}>favorite meal</span>
+          Partagez votre <span className={classes.highlight}>plat préféré</span>
         </h1>
-        <p>Or any other meal you feel needs sharing!</p>
+        <p>Ou tout autre plat qui mérite d&apos;être partagé !</p>
       </header>
       <main className={classes.main}>
         <form className={classes.form} action={formAction}>
           <div className={classes.row}>
             <p>
-              <label htmlFor="name">Your name</label>
+              <label htmlFor="name">Votre nom</label>
               <input type="text" id="name" name="name" required />
             </p>
             <p>
-              <label htmlFor="email">Your email</label>
+              <label htmlFor="email">Votre email</label>
               <input type="email" id="email" name="email" required />
             </p>
           </div>
           <p>
-            <label htmlFor="title">Title</label>
+            <label htmlFor="title">Titre</label>
             <input type="text" id="title" name="title" required />
           </p>
           <p>
-            <label htmlFor="summary">Short Summary</label>
+            <label htmlFor="summary">Résumé court</label>
             <input type="text" id="summary" name="summary" required />
           </p>
           <p>
@@ -43,10 +43,10 @@ export default function ShareMealPage() {
               required
             ></textarea>
           </p>
-          <ImagePicker label="Your image" name="image"/>
+          <ImagePicker label="Votre image" name="image" />
           {state.message && <p>{state.message}</p>}
           <p className={classes.actions}>
-            <MealsFormSubmit/>
+            <MealsFormSubmit />
           </p>
         </form>
       </main>

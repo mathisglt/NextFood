@@ -1,8 +1,8 @@
 export default function NotFound() {
     return (
         <main className="not-found">
-            <h1>Meal not found</h1>
-            <p>It seems like this meal doesn t exists, if you have any recipe, share it with the community ! </p>
+            <h1>Recette introuvable</h1>
+            <p>Il semble que cette recette n&apos;existe pas, si vous avez une recette, partagez-la avec la communauté !</p>
         </main>
     )
 }

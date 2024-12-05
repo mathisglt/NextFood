@@ -1,26 +1,25 @@
 import classes from "./page.module.css"
-import {getMeal} from '/lib/mealsapi'
-import {notFound} from "next/navigation"
+import { getMeal } from '/lib/mealsapi'
+import { notFound } from "next/navigation"
 import Image from "next/image"
-export async function generateMetadata({params}) {
+export async function generateMetadata({ params }) {
     const meal = getMeal(params.mealSlug)
-    if(meal){
+    if (meal) {
         return {
             title: meal.title,
             description: meal.summary
         }
-    }else {
+    } else {
         return {
-            title: "Unknown meal page",
-            description : "The url you mentionned leads to an unknown page"
+            title: "Page de recette inconnue",
+            description: "L'URL mentionnée mène à une page inconnue"
         }
     }
-    
 }
 export default async function MealsSlugDetail({ params }) {
-    
-    const {mealSlug} = await params
-    const meal  = await getMeal(mealSlug)
+
+    const { mealSlug } = await params
+    const meal = await getMeal(mealSlug)
     if (!meal) {
         notFound()
     }
@@ -38,17 +37,17 @@ export default async function MealsSlugDetail({ params }) {
                         <a href={`mailto:${meal.creator_email}`}>{meal.creaton}</a>
                     </p>
                     <p className={classes.summary}>
-                        <a href={`mailto:${meal.summary}`}>Summary</a>
+                        <a href={`mailto:${meal.summary}`}>Résumé</a>
                     </p>
                 </div>
 
             </header>
             <main>
-                <p 
-                 className={classes.instructions} 
-                 dangerouslySetInnerHTML={{
-                    __html: meal.instructions,
-                }}
+                <p
+                    className={classes.instructions}
+                    dangerouslySetInnerHTML={{
+                        __html: meal.instructions,
+                    }}
                 ></p>
             </main>
         </>

@@ -15,7 +15,7 @@ export default function Navbar() {
             <nav className={classes.nav}>
                 <ul className={classes.ul}>
                     <li className={classes.li}>
-                        <Link href="/meals" className={path.startsWith('/meals') ? classes.active:undefined}>Repas</Link>
+                        <Link href="/meals" className={path.startsWith('/meals') ? classes.active:undefined}>Recettes</Link>
                     </li>
                     <li>
                         <Link href="/community" className={path.startsWith('/community') ? classes.active:undefined}>Communauté</Link>
