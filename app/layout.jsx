@@ -1,5 +1,5 @@
 import './globals.css';
-import LayoutBackground from 'components/header/main-header.jsx';
+import LayoutBackground from '/components/header/main-header.jsx';
 
 export const metadata = {
   title: 'NextFood',
