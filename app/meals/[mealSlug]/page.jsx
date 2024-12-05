@@ -1,11 +1,17 @@
 import classes from "./page.module.css"
 import {getMeal} from '/lib/mealsapi'
+import {notFound} from "next/navigation"
 import Image from "next/image"
 
 export default async function MealsSlugDetail({ params }) {
+    
     const {mealSlug} = await params
     const meal  = await getMeal(mealSlug)
-    meal.instructions = meal.instructions.replace(/\n/g), '<br />'
+    if (!meal) {
+        notFound()
+    }
+    meal.instructions = meal.instructions.replace(/\n/g, '<br />');
+
     return (
         <>
             <header className={classes.header}>
