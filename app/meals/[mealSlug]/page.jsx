@@ -1,7 +1,16 @@
 import classes from "./page.module.css"
-import { getMeal } from '/lib/mealsapi'
+import { getMeal, getMeals } from '/lib/mealsapi'
 import { notFound } from "next/navigation"
 import Image from "next/image"
+
+// Add this function to generate static paths
+export async function generateStaticParams() {
+    const meals = await getMeals();
+    return meals.map((meal) => ({
+        mealSlug: meal.slug
+    }));
+}
+
 export async function generateMetadata({ params }) {
     const meal = getMeal(params.mealSlug)
     if (meal) {
